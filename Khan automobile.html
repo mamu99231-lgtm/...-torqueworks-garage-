@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khan Automobile — Car Repair & Genuine Parts in Gurugram | 25+ Years Experience</title>
+<meta name="description" content="Khan Automobile, Dharam Colony Gurugram. 25+ years of trusted car repair, servicing & genuine spare parts. Open 7 days. Call 9968540599.">
+<meta name="keywords" content="car repair Gurugram, Khan Automobile, car service Dharam Colony, genuine car parts Gurugram, mechanic Gurugram">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ BASE ============ */
+  :root{
+    --bg:#0d0f12;
+    --bg-2:#14181d;
+    --card:#1a1f26;
+    --line:#252c35;
+    --accent:#ff8a00;
+    --accent-2:#ffb340;
+    --text:#e9edf2;
+    --muted:#98a3b0;
+    --radius:14px;
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  h1,h2,h3,.condensed{font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;line-height:1.1}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .accent{color:var(--accent)}
+
+  /* ============ BUTTONS ============ */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 26px;border-radius:60px;font-weight:600;font-size:.95rem;
+    border:2px solid transparent;cursor:pointer;transition:.25s;white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--accent),#ff6a00);color:#1a0d00;box-shadow:0 8px 24px -8px rgba(255,138,0,.7)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px -8px rgba(255,138,0,.85)}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+
+  /* ============ HEADER ============ */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(13,15,18,.72);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:.3s;
+  }
+  header.scrolled{background:rgba(13,15,18,.96);border-bottom-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:11px}
+  .logo-mark{
+    width:44px;height:44px;flex:0 0 44px;border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),#ff5e00);
+    display:grid;place-items:center;font-family:'Barlow Condensed';font-weight:800;
+    font-size:1.35rem;color:#1a0d00;
+  }
+  .logo-txt strong{display:block;font-family:'Barlow Condensed';font-size:1.4rem;font-weight:800;letter-spacing:1px;line-height:1}
+  .logo-txt span{font-size:.68rem;color:var(--muted);letter-spacing:2.4px;text-transform:uppercase}
+  .nav-links{display:flex;gap:30px;list-style:none;align-items:center}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:.2s;position:relative}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:.25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;padding:150px 0 90px;overflow:hidden;
+    background:
+      radial-gradient(900px 500px at 78% 12%,rgba(255,138,0,.16),transparent 62%),
+      radial-gradient(700px 460px at 8% 88%,rgba(255,138,0,.08),transparent 65%),
+      var(--bg);
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;opacity:.35;pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(circle at 50% 40%,#000 10%,transparent 72%);
+    -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 10%,transparent 72%);
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:60px;
+    background:rgba(255,138,0,.1);border:1px solid rgba(255,138,0,.32);
+    color:var(--accent-2);font-size:.78rem;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:22px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(255,138,0,.7);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,138,0,0)}100%{box-shadow:0 0 0 0 rgba(255,138,0,0)}}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;text-transform:uppercase;margin-bottom:20px}
+  .hero h1 em{font-style:normal;display:block;color:var(--accent);text-shadow:0 0 42px rgba(255,138,0,.4)}
+  .hero p.lead{font-size:1.06rem;color:var(--muted);max-width:540px;margin-bottom:32px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .hero-note{display:flex;gap:26px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+  .hero-note b{color:var(--text);font-weight:600}
+
+  /* Hero card */
+  .hero-card{
+    background:linear-gradient(160deg,var(--card),#101419);
+    border:1px solid var(--line);border-radius:22px;padding:30px;
+    box-shadow:0 30px 70px -30px rgba(0,0,0,.9);position:relative;
+  }
+  .hero-card::after{
+    content:'';position:absolute;top:-1px;left:30px;right:30px;height:2px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  }
+  .hero-card h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:6px}
+  .hero-card .sub{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .spec{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+  .spec:last-of-type{border-bottom:0}
+  .spec span:first-child{color:var(--muted)}
+  .spec span:last-child{font-weight:600;text-align:right}
+  .open-tag{
+    display:inline-flex;align-items:center;gap:7px;margin-top:20px;padding:9px 16px;border-radius:10px;
+    background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#4ade80;
+    font-size:.82rem;font-weight:600;width:100%;justify-content:center;
+  }
+
+  /* ============ STATS STRIP ============ */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+  .stat{padding:32px 14px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:'Barlow Condensed';font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1}
+  .stat span{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+
+  /* ============ SECTIONS ============ */
+  section{padding:96px 0}
+  .sec-head{max-width:660px;margin:0 auto 56px;text-align:center}
+  .sec-head .tag{
+    font-size:.76rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:var(--accent);display:block;margin-bottom:12px;
+  }
+  .sec-head h2{font-size:clamp(2rem,4.5vw,3rem);text-transform:uppercase;font-weight:800;margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:1rem}
+
+  /* ============ ABOUT ============ */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-visual{
+    border-radius:20px;overflow:hidden;border:1px solid var(--line);
+    background:linear-gradient(150deg,#1d232b,#0f1216);padding:38px;position:relative;
+  }
+  .about-visual .big-num{
+    font-family:'Barlow Condensed';font-size:7.5rem;font-weight:800;line-height:.85;
+    background:linear-gradient(180deg,var(--accent),rgba(255,138,0,.15));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .about-visual .big-lbl{font-family:'Barlow Condensed';font-size:1.5rem;text-transform:uppercase;color:var(--muted);letter-spacing:2px}
+  .about-visual hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+  .owner-row{display:flex;align-items:center;gap:14px}
+  .owner-av{
+    width:52px;height:52px;border-radius:50%;flex:0 0 52px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--accent),#ff5e00);color:#1a0d00;
+    font-family:'Barlow Condensed';font-weight:800;font-size:1.3rem;
+  }
+  .owner-row b{display:block;font-size:1rem}
+  .owner-row small{color:var(--muted);font-size:.82rem}
+  .about-text h2{font-size:clamp(1.9rem,4vw,2.7rem);text-transform:uppercase;margin-bottom:18px}
+  .about-text p{color:var(--muted);margin-bottom:16px}
+  .ticks{list-style:none;margin-top:24px;display:grid;gap:12px}
+  .ticks li{display:flex;gap:12px;align-items:flex-start;font-size:.94rem}
+  .ticks svg{flex:0 0 20px;margin-top:3px;color:var(--accent)}
+
+  /* ============ SERVICES ============ */
+  .services{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}
+  .svc{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;transition:.28s;position:relative;overflow:hidden;
+  }
+  .svc::before{
+    content:'';position:absolute;inset:0;opacity:0;transition:.3s;
+    background:radial-gradient(300px 160px at 50% 0%,rgba(255,138,0,.13),transparent 70%);
+  }
+  .svc:hover{transform:translateY(-7px);border-color:rgba(255,138,0,.45);box-shadow:0 22px 45px -22px rgba(0,0,0,.85)}
+  .svc:hover::before{opacity:1}
+  .svc-ico{
+    width:50px;height:50px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;
+    background:rgba(255,138,0,.1);border:1px solid rgba(255,138,0,.28);color:var(--accent);position:relative;
+  }
+  .svc h3{font-size:1.28rem;text-transform:uppercase;margin-bottom:8px;position:relative}
+  .svc p{font-size:.88rem;color:var(--muted);position:relative}
+
+  /* ============ WHY US ============ */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .why{
+    padding:30px 24px;border-radius:var(--radius);
+    background:linear-gradient(160deg,rgba(255,138,0,.07),transparent 65%);
+    border:1px solid var(--line);
+  }
+  .why b{font-family:'Barlow Condensed';font-size:1.35rem;text-transform:uppercase;display:block;margin-bottom:8px}
+  .why p{font-size:.87rem;color:var(--muted)}
+  .why .k{
+    font-family:'Barlow Condensed';font-size:2.4rem;font-weight:800;
+    color:rgba(255,138,0,.28);line-height:1;display:block;margin-bottom:6px;
+  }
+
+  /* ============ TESTIMONIALS ============ */
+  .reviews{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .rev{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .stars{color:var(--accent);letter-spacing:3px;font-size:.95rem}
+  .rev p{font-size:.92rem;color:#c4ccd6;font-style:italic;flex:1}
+  .rev-who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+  .rev-av{
+    width:40px;height:40px;border-radius:50%;flex:0 0 40px;display:grid;place-items:center;
+    background:rgba(255,138,0,.14);color:var(--accent);font-weight:700;font-size:.9rem;
+  }
+  .rev-who b{font-size:.9rem;display:block}
+  .rev-who small{font-size:.76rem;color:var(--muted)}
+
+  /* ============ CONTACT ============ */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .info-list{display:grid;gap:16px;margin-bottom:28px}
+  .info{
+    display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:var(--radius);
+    background:var(--card);border:1px solid var(--line);transition:.25s;
+  }
+  .info:hover{border-color:rgba(255,138,0,.4)}
+  .info-ico{
+    width:44px;height:44px;flex:0 0 44px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(255,138,0,.1);border:1px solid rgba(255,138,0,.25);color:var(--accent);
+  }
+  .info b{display:block;font-size:.78rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:600}
+  .info p{font-size:.95rem;line-height:1.6}
+  .info a{color:var(--accent);font-weight:600;font-size:1.15rem;font-family:'Barlow Condensed';letter-spacing:1px}
+
+  .map-box{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);height:290px;background:var(--card)}
+  .map-box iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
+
+  form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}
+  form h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:6px}
+  form .fsub{font-size:.85rem;color:var(--muted);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.78rem;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:600}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 15px;border-radius:10px;font-family:inherit;font-size:.94rem;
+    background:#0f1318;border:1px solid var(--line);color:var(--text);transition:.2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,138,0,.13);
+  }
+  .field textarea{resize:vertical;min-height:100px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.76rem;color:var(--muted);text-align:center;margin-top:12px}
+
+  /* ============ FOOTER ============ */
+  footer{background:#0a0c0f;border-top:1px solid var(--line);padding:56px 0 0}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:40px}
+  .foot-grid h4{font-family:'Barlow Condensed';font-size:1.15rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;color:var(--accent)}
+  .foot-grid p,.foot-grid li{font-size:.88rem;color:var(--muted);line-height:1.9}
+  .foot-grid ul{list-style:none}
+  .foot-grid ul a:hover{color:var(--accent)}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;
+    gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);
+  }
+
+  /* ============ FLOATING ACTIONS ============ */
+  .floaters{position:fixed;right:18px;bottom:20px;z-index:90;display:flex;flex-direction:column;gap:12px}
+  .fab{
+    width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+    box-shadow:0 10px 26px -8px rgba(0,0,0,.85);transition:.25s;
+  }
+  .fab:hover{transform:scale(1.1)}
+  .fab-call{background:linear-gradient(135deg,var(--accent),#ff5e00);color:#1a0d00}
+  .fab-wa{background:#25d366;color:#fff}
+
+  /* ============ REVEAL ANIM ============ */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:980px){
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .hero-grid{gap:44px}
+    .about-grid{gap:36px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{
+      position:fixed;top:74px;left:0;right:0;flex-direction:column;gap:0;
+      background:rgba(13,15,18,.98);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);padding:0 20px;
+      max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .nav-links.open{max-height:420px;padding:14px 20px 26px}
+    .nav-links li{width:100%;border-bottom:1px solid var(--line)}
+    .nav-links li:last-child{border-bottom:0}
+    .nav-links a{display:block;padding:15px 0;font-size:1rem}
+    .nav-links a::after{display:none}
+    .burger{display:flex}
+    .nav-cta .btn{display:none}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+    section{padding:70px 0}
+    .hero{padding:120px 0 70px}
+  }
+  @media(max-width:560px){
+    .foot-grid{grid-template-columns:1fr;gap:28px}
+    .row2{grid-template-columns:1fr}
+    .stat b{font-size:2.1rem}
+    .hero-note{gap:16px;font-size:.8rem}
+    .btn{padding:12px 22px;font-size:.9rem}
+    form{padding:22px}
+    .about-visual{padding:26px}
+    .about-visual .big-num{font-size:5.6rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#home" class="logo">
+      <div class="logo-mark">KA</div>
+      <div class="logo-txt">
+        <strong>KHAN AUTOMOBILE</strong>
+        <span>Car Repair &amp; Genuine Parts</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="tel:9968540599" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        9968540599
+      </a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge"><span class="dot"></span> Trusted in Gurugram since 1999</span>
+      <h1>Car Repair Done<em>Right the First Time</em></h1>
+      <p class="lead">
+        Khan Automobile brings you <strong>25+ years of hands-on experience</strong> in car servicing,
+        engine repair and genuine spare parts — all under one roof in Dharam Colony, Gurugram.
+        Honest pricing. Skilled hands. Zero shortcuts.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:9968540599" class="btn btn-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/919968540599?text=Hi%20Khan%20Automobile%2C%20I%20need%20car%20repair%20service." target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.24 8.21z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-note">
+        <span><b>✓</b> 100% Genuine Parts</span>
+        <span><b>✓</b> Open All 7 Days</span>
+        <span><b>✓</b> Free Basic Check-up</span>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h3>Workshop Details</h3>
+      <p class="sub">Walk in or call ahead — we'll keep a slot ready.</p>
+
+      <div class="spec"><span>Owner</span><span>Mehandi Hasan</span></div>
+      <div class="spec"><span>Experience</span><span>25+ Years</span></div>
+      <div class="spec"><span>Speciality</span><span>Repair &amp; Genuine Parts</span></div>
+      <div class="spec"><span>Working Days</span><span>Monday – Sunday</span></div>
+      <div class="spec"><span>Location</span><span>Dharam Colony, Gurugram</span></div>
+
+      <span class="open-tag">
+        <span class="dot" style="background:#4ade80;box-shadow:none"></span>
+        Open 7 Days a Week
+      </span>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><b>25+</b><span>Years Experience</span></div>
+    <div class="stat"><b>7</b><span>Days Open</span></div>
+    <div class="stat"><b>100%</b><span>Genuine Parts</span></div>
+    <div class="stat"><b>5000+</b><span>Cars Serviced</span></div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <div class="big-num">25+</div>
+      <div class="big-lbl">Years of Trust</div>
+      <hr>
+      <div class="owner-row">
+        <div class="owner-av">MH</div>
+        <div>
+          <b>Mehandi Hasan</b>
+          <small>Founder &amp; Head Technician</small>
+        </div>
+      </div>
+      <hr>
+      <p style="font-size:.85rem;color:var(--muted)">
+        Opposite ACP Office, Near Geeta Property,<br>Dharam Colony, Gurugram
+      </p>
+    </div>
+
+    <div class="about-text reveal">
+      <span class="sec-head tag" style="text-align:left;display:block">About Khan Automobile</span>
+      <h2>A Workshop Built on <span class="accent">Experience</span>, Not Excuses</h2>
+      <p>
+        For over two and a half decades, Khan Automobile has been the go-to workshop for car owners
+        across Dharam Colony and greater Gurugram. What started as a small repair setup is today a
+        full-service garage trusted by thousands of families, taxi operators and corporate fleets.
+      </p>
+      <p>
+        Under the guidance of <strong>Mehandi Hasan</strong>, our team diagnoses the real problem
+        before touching a single bolt. No unnecessary part replacement. No inflated bills.
+        Only genuine parts and workmanship that lasts.
+      </p>
+
+      <ul class="ticks">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Genuine spare parts only</strong> — sourced from authorised dealers with bills.</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Transparent estimates</strong> shared before any work begins.</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>All brands serviced</strong> — Maruti, Hyundai, Honda, Toyota, Tata, Mahindra &amp; more.</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Open all 7 days</strong> — because car trouble doesn't wait for Monday.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">What We Do</span>
+      <h2>Complete Car Care Services</h2>
+      <p>From a routine oil change to a full engine overhaul — everything handled in-house by experienced technicians.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Engine Repair</h3>
+        <p>Complete engine diagnostics, overhauling, timing belt, head gasket and performance restoration.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/></svg>
+        </div>
+        <h3>AC Service &amp; Repair</h3>
+        <p>Gas refilling, compressor repair, cooling coil cleaning and full AC performance check.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+        </div>
+        <h3>Brake &amp; Suspension</h3>
+        <p>Brake pads, discs, shockers, bushings and complete suspension tuning for a safer ride.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+        </div>
+        <h3>Car Electricals</h3>
+        <p>Battery, alternator, self-motor, wiring faults, lights, sensors and complete electrical repair.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V8a2 2 0 0 0-1-1.73l-6-3.46a2 2 0 0 0-2 0l-6 3.46A2 2 0 0 0 4 8v8a2 2 0 0 0 1 1.73l6 3.46a2 2 0 0 0 2 0l6-3.46A2 2 0 0 0 20 16z"/></svg>
+        </div>
+        <h3>Denting &amp; Painting</h3>
+        <p>Scratch removal, dent pulling, panel beating and computerised colour-matched painting.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Periodic Servicing</h3>
+        <p>Oil change, filters, fluids, spark plugs and a 40-point health check-up of your car.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Clutch &amp; Transmission</h3>
+        <p>Clutch plate replacement, gearbox repair and automatic transmission servicing.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l-1-6 2-5h10l2 5-1 6"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+        </div>
+        <h3>Wheel Alignment</h3>
+        <p>Computerised wheel alignment, balancing and tyre rotation for even wear and better mileage.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Genuine Spare Parts</h3>
+        <p>Authorised genuine parts with bill &amp; warranty — filters, belts, pads, pumps and more.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Why Choose Us</span>
+      <h2>Reasons Gurugram Trusts Khan Automobile</h2>
+      <p>We don't just fix cars — we build relationships that last for generations of vehicles.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why reveal">
+        <span class="k">01</span>
+        <b>25+ Years Experience</b>
+        <p>Two and a half decades of solving problems that other workshops give up on.</p>
+      </div>
+      <div class="why reveal">
+        <span class="k">02</span>
+        <b>100% Genuine Parts</b>
+        <p>Every spare part is sourced from authorised dealers and comes with a proper bill.</p>
+      </div>
+      <div class="why reveal">
+        <span class="k">03</span>
+        <b>Open 7 Days</b>
+        <p>Monday to Sunday — your car gets attention whenever you need it, without waiting.</p>
+      </div>
+      <div class="why reveal">
+        <span class="k">04</span>
+        <b>Honest Pricing</b>
+        <p>Clear estimates upfront. You approve before we start. No hidden charges, ever.</p>
+      </div>
+      <div class="why reveal">
+        <span class="k">05</span>
+        <b>Skilled Technicians</b>
+        <p>A trained team that handles everything from Maruti to Mahindra with equal care.</p>
+      </div>
+      <div class="why reveal">
+        <span class="k">06</span>
+        <b>Quick Turnaround</b>
+        <p>Most routine jobs completed the same day so you're back on the road fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Customer Voices</span>
+      <h2>What Our Customers Say</h2>
+      <p>Real feedback from car owners who trust us with their vehicles.</p>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Mehandi bhai has been servicing my car for over 8 years. He always tells you the truth about what actually needs replacing. Very rare to find such honesty."</p>
+        <div class="rev-who">
+          <div class="rev-av">RS</div>
+          <div><b>Rakesh Sharma</b><small>Dharam Colony, Gurugram</small></div>
+        </div>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>"My Hyundai's AC had a problem that two other garages couldn't fix. Khan Automobile diagnosed it in 20 minutes and fixed it the same day. Fair price too."</p>
+        <div class="rev-who">
+          <div class="rev-av">PA</div>
+          <div><b>Priya Aggarwal</b><small>Sector 14, Gurugram</small></div>
+        </div>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p>"I run a taxi fleet and all my cars come here. Genuine parts, proper bills, and they're open every single day. That reliability matters a lot in my business."</p>
+        <div class="rev-who">
+          <div class="rev-av">MK</div>
+          <div><b>Mohd. Kaleem</b><small>Fleet Owner, Gurugram</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Get In Touch</span>
+      <h2>Visit Our Workshop</h2>
+      <p>Drop by any day of the week, or send us a message and we'll get back to you quickly.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-list">
+          <div class="info">
+            <div class="info-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <b>Address</b>
+              <p>Khan Automobile, Opposite ACP Office,<br>Near Geeta Property, Dharam Colony,<br>Gurugram, Haryana</p>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="info-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <b>Call / WhatsApp</b>
+              <p><a href="tel:9968540599">99685 40599</a></p>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="info-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <b>Working Hours</b>
+              <p>Monday – Sunday · Open All 7 Days<br>Walk-ins welcome</p>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="info-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <b>Owner</b>
+              <p>Mehandi Hasan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <iframe
+            title="Khan Automobile Location"
+            src="https://www.google.com/maps?q=Dharam+Colony,+Gurugram,+Haryana&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <form id="enquiryForm" class="reveal" novalidate>
+        <h3>Book a Service</h3>
+        <p class="fsub">Fill the form and we'll call you back to confirm your slot.</p>
+
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Rahul Verma" required>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="field">
+            <label for="car">Car Model</label>
+            <input type="text" id="car" name="car" placeholder="e.g. Swift VXi">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option>Periodic Servicing</option>
+            <option>Engine Repair</option>
+            <option>AC Service &amp; Repair</option>
+            <option>Brake &amp; Suspension</option>
+            <option>Car Electricals</option>
+            <option>Denting &amp; Painting</option>
+            <option>Clutch &amp; Transmission</option>
+            <option>Wheel Alignment</option>
+            <option>Genuine Spare Parts</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="msg">Describe the Problem</label>
+          <textarea id="msg" name="msg" placeholder="Tell us what's happening with your car..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Enquiry
+        </button>
+        <p class="form-note">Prefer talking? Call <a href="tel:9968540599" class="accent" style="font-weight:600">99685 40599</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px">
+          <div class="logo-mark">KA</div>
+          <div class="logo-txt">
+            <strong>KHAN AUTOMOBILE</strong>
+            <span>Since 1999</span>
+          </div>
+        </div>
+        <p>Trusted car repair workshop in Dharam Colony, Gurugram. 25+ years of experience, genuine spare parts and honest service — open all 7 days.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Engine Repair</a></li>
+          <li><a href="#services">AC Service</a></li>
+          <li><a href="#services">Denting &amp; Painting</a></li>
+          <li><a href="#services">Car Electricals</a></li>
+          <li><a href="#services">Genuine Parts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Reach Us</h4>
+        <p>
+          Opposite ACP Office, Near Geeta Property,<br>
+          Dharam Colony, Gurugram, Haryana
+        </p>
+        <p style="margin-top:10px">
+          <a href="tel:9968540599" style="color:var(--accent);font-weight:600">+91 99685 40599</a><br>
+          Open 7 Days a Week
+        </p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Khan Automobile. All rights reserved.</span>
+      <span>Proprietor: Mehandi Hasan · Dharam Colony, Gurugram</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<div class="floaters">
+  <a href="https://wa.me/919968540599?text=Hi%20Khan%20Automobile%2C%20I%20need%20car%20repair%20service." target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.24 8.21z"/></svg>
+  </a>
+  <a href="tel:9968540599" class="fab fab-call" aria-label="Call">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+
+<script>
+  /* ---------- Year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Header shadow on scroll ---------- */
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+  }));
+
+  /* ---------- Scroll reveal ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i % 4) * 80 + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.12, rootMargin: '0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- Enquiry form → WhatsApp ---------- */
+  document.getElementById('enquiryForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name  = this.name.value.trim();
+    const phone = this.phone.value.trim();
+    const car   = this.car.value.trim();
+    const svc   = this.service.value;
+    const msg   = this.msg.value.trim();
+
+    if (!name || !/^[0-9]{10}$/.test(phone)) {
+      alert('Please enter your name and a valid 10-digit mobile number.');
+      return;
+    }
+
+    const text =
+      '*New Service Enquiry — Khan Automobile*%0A%0A' +
+      '*Name:* ' + encodeURIComponent(name) + '%0A' +
+      '*Mobile:* ' + encodeURIComponent(phone) + '%0A' +
+      '*Car:* ' + encodeURIComponent(car || 'Not specified') + '%0A' +
+      '*Service:* ' + encodeURIComponent(svc) + '%0A' +
+      '*Problem:* ' + encodeURIComponent(msg || 'Not specified');
+
+    window.open('https://wa.me/919968540599?text=' + text, '_blank');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
